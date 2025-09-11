@@ -1,5 +1,5 @@
+'use client'
 import StaggeredMenu from "./StaggeredMenu";
-import logo from '../../public/logo-crop.png'
 
 export default function Navbar() {
   const menuItems = [
@@ -27,7 +27,7 @@ const socialItems = [
         openMenuButtonColor="#5c7eae"
         changeMenuColorOnOpen={true}
         colors={['transparent', 'transparent']}
-        logoUrl={logo}
+        logoUrl='/logo-crop.png'
         accentColor="#5c7eae"
         onMenuOpen={() => console.log('Menu opened')}
         onMenuClose={() => console.log('Menu closed')}
