@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Footer = () => {
   return (
     <footer className="w-full bg-gradient-to-t from-neutral-600 to-dark-blue py-20 px-10">
-      <div className='max-w-7xl h-full mx-auto mb-28 grid lg:grid-cols-2 grid-cols-1 justify-items-center items-start'>
+      <div className='max-w-7xl h-full mx-auto mb-28 grid lg:grid-cols-2 grid-cols-1 md:justify-items-center items-start'>
         <div>
           <h2 className='text-white text-4xl font-semibold mb-8'>Navigate</h2>
           <ul>
@@ -42,7 +42,7 @@ const Footer = () => {
 
       <div className='flex lg:flex-row flex-col justify-between items-center text-dark-text'>
         <Image src={logo} alt='logo' width={400} />
-        <p>&copy;{new Date().getFullYear()} Prime Recovery System. All Rights Reserved.</p>
+        <p className='my-4 text-center'>&copy;{new Date().getFullYear()} Prime Recovery System. All Rights Reserved.</p>
 
         <div className='text-dark-text underline flex gap-4'>
           <Link href='/terms-of-service'>Terms of Service</Link>

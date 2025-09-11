@@ -3,20 +3,19 @@ import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { IoBusinessOutline } from "react-icons/io5";
-import { FaPeopleArrows } from "react-icons/fa"
-import { BiPlusMedical } from "react-icons/bi"
-import { GoLaw } from "react-icons/go"
+import { FaPeopleArrows } from "react-icons/fa";
+import { BiPlusMedical } from "react-icons/bi";
+import { GoLaw } from "react-icons/go";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function ParallaxSection() {
   const backgroundRef = useRef(null);
-  const foregroundRef = useRef(null);
 
   useEffect(() => {
-    // Animate background element
+    // Animate background (always active)
     gsap.to(backgroundRef.current, {
-      yPercent: -80, // Move background slower
+      yPercent: -20,
       ease: 'none',
       scrollTrigger: {
         trigger: backgroundRef.current,
@@ -26,82 +25,68 @@ function ParallaxSection() {
       },
     });
 
-    // Animate foreground element
-    gsap.to(foregroundRef.current, {
-      yPercent: 40, // Move foreground faster
-      ease: 'none',
-      scrollTrigger: {
-        trigger: foregroundRef.current,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-    });
-
-    // Cleanup function for ScrollTrigger instances
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
   return (
-    <div style={{ height: '100vh', overflow: 'hidden', position: 'relative' }} className='px-10'>
-      <h1 className='text-center text-gray-200 font-extrabold text-6xl my-10'>Services</h1>
-      <div className='max-w-7xl h-full mx-auto mt-36'>
+    <div className='relative w-full h-full min-h-screen overflow-hidden px-6 md:px-10 py-10'>
+      <h1 className='text-center text-gray-200 font-extrabold text-5xl md:text-6xl mb-16'>Services</h1>
+
+      <div className='relative '>
+        {/* Background Image */}
         <div
           ref={backgroundRef}
           style={{
-            position: 'absolute',
-            top: '40%',
-            right: '40%',
-            width: '35%',
-            height: '60%',
-            backgroundImage: 'url(header.jpg)',
+            backgroundImage: 'url(/header.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
+          className='absolute inset-0 md:top-[40%] md:left-0 md:w-[70%] w-full h-[60%] md:h-full -z-10'
         />
+
+        {/* Foreground Grid */}
         <div
-          ref={foregroundRef}
-          style={{
-            position: 'relative',
-            zIndex: 1,
-          }}
-          className='relative max-w-4xl ml-auto grid md:grid-cols-2 grid-cols-1 bg-gradient-to-b from-[#41506f] to-[#1b212b]'
+          className='relative max-w-7xl mx-auto z-10 grid grid-cols-1 md:grid-cols-2 gap-6 bg-gradient-to-b from-[#41506f] to-[#1b212b] p-4 md:px-8 md:py-18 rounded-lg'
         >
-          <div className='relative p-8'>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[100%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <div className='flex flex-col justify-center gap-6'>
+          {/* Commercial Collection */}
+          <div className='relative w-full p-6 bg-transparent'>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 h-full w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent pointer-events-none hidden sm:block"></div>
+            <div className='flex flex-col justify-center gap-4'>
               <IoBusinessOutline size={25} className='text-blue-accent' />
               <h3 className='text-2xl text-blue-accent'>Commercial Collection</h3>
-              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis laboriosam dignissimos aliquam vel optio! Soluta amet laudantium obcaecati nam molestiae.</p>
+              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
             </div>
           </div>
 
-          <div className='relative p-8'>
-            <div className="absolute bottom-0 right-1/2 translate-x-1/2 h-[1px] w-full bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-            <div className='flex flex-col justify-center gap-6'>
+          {/* Consumer Collection */}
+          <div className='relative w-full p-6 bg-transparent'>
+            <div className="absolute bottom-0 right-1/2 translate-x-1/2 h-[1px] w-full bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none hidden sm:block"></div>
+            <div className='flex flex-col justify-center gap-4'>
               <FaPeopleArrows size={25} className='text-blue-accent' />
               <h3 className='text-2xl text-blue-accent'>Consumer Collection</h3>
-              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis laboriosam dignissimos aliquam vel optio! Soluta amet laudantium obcaecati nam molestiae.</p>
+              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
             </div>
           </div>
 
-          <div className='relative p-8'>
-            <div className="absolute top-0 right-1/2 translate-x-1/2 h-[1px] w-full bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-            <div className='flex flex-col justify-center gap-6'>
+          {/* Medical Collection */}
+          <div className='relative w-full p-6 bg-transparent'>
+            <div className="absolute top-0 right-1/2 translate-x-1/2 h-[1px] w-full bg-gradient-to-r from-transparent via-white/40 to-transparent pointer-events-none hidden sm:block"></div>
+            <div className='flex flex-col justify-center gap-4'>
               <BiPlusMedical size={25} className='text-blue-accent' />
               <h3 className='text-2xl text-blue-accent'>Medical Collection</h3>
-              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis laboriosam dignissimos aliquam vel optio! Soluta amet laudantium obcaecati nam molestiae.</p>
+              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
             </div>
           </div>
 
-          <div className='relative p-8'>
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[100%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <div className='flex flex-col justify-center gap-6'>
+          {/* Legal Collection */}
+          <div className='relative w-full p-6 bg-transparent'>
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 h-full w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent pointer-events-none hidden sm:block"></div>
+            <div className='flex flex-col justify-center gap-4'>
               <GoLaw size={25} className='text-blue-accent' />
               <h3 className='text-2xl text-blue-accent'>Legal Collection</h3>
-              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis laboriosam dignissimos aliquam vel optio! Soluta amet laudantium obcaecati nam molestiae.</p>
+              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
             </div>
           </div>
         </div>
