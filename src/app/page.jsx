@@ -31,7 +31,7 @@ const page = () => {
         </div>
       </header>
 
-      <main className="min-h-screen w-full">
+      <main className="min-h-screen w-full overflow-x-hidden">
         <Charts />
 
         <section className="w-full min-h-screen bg-radial-[at_15%_25%] from-blue-accent/50 from-1% to-zinc-900">

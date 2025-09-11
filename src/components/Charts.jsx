@@ -91,7 +91,7 @@ export default function Charts() {
             className="text-3xl md:text-4xl font-light text-[#4d7dfc]"
           >
           </p>
-          <div className="flex items-end gap-5 absolute bottom-6 h-40 w-full">
+          <div className="flex items-end md:gap-5 gap-[11px] md:absolute bottom-6 h-40 w-full">
             {Array.from({ length: 25 }).map((_, i) => (
               <div
                 key={i}
@@ -114,7 +114,7 @@ export default function Charts() {
               className="text-3xl md:text-4xl font-light text-[#4d7dfc]"
             >
             </p>
-            <div className="flex items-end gap-5 mt-6 h-32 w-full">
+            <div className="flex items-end md:gap-5 gap-[11px] mt-6 h-32 w-full">
               {Array.from({ length: 25 }).map((_, i) => (
                 <div
                   key={i}
@@ -138,7 +138,7 @@ export default function Charts() {
             >
               +256%
             </p>
-            <div className="flex items-end gap-5 mt-6 h-32 w-full">
+            <div className="flex items-end md:gap-5 gap-[11px] mt-6 h-32 w-full">
               {Array.from({ length: 25 }).map((_, i) => (
                 <div
                   key={i}
