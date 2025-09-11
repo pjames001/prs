@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark-blue: #03070f;
+  --color-white: #ddd;
+  --color-dark-text: #9495a0;
+  --color-blue-accent: #5c7eae;
+  --color-gray-stroke-lines: #3e3e3e;
+  --shadow-button: 0 0 5px #5c7eae, 0 0 25px #5c7eae, 0 0 50px #5c7eae, 0 0 200px #5c7eae;
+}
+
+.section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  height: 100vh;
+}
+
+.hero .img {
+  width: 50%;
+  aspect-ratio: 1;
+
+}
+
+.footer {
+  height: 50vh;
+  align-items: flex-start;
+}
+
+.footer a {
+  font-size: 4vw;
+  color: white;
+}
+
+.main {
+
+  height: 150vh;
+  flex-direction: column;
+}
+
+.row {
+  position: relative;
+
+  margin: 1em 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.card {
+  width: 40%;
+  height: 360px;
+  border-radius: .75em;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.main-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  border: 2px solid white;
+  border-radius: 100%;
+  overflow: hidden;
+  transform: scale(0);
+}
+
+.copy {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.line {
+  position: relative;
+  margin: .5em 0;
+  width: max-content;
+  height: 28px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.line p {
+  position: relative;
+  font-size: 24px;
+  transform: translateY(30px);
+}
+
+.button {
+  position: relative;
+  padding: 1em 2em;
+  font-size: 18px;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8em;
+  background: none;
+  outline: none;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.shine {
+  animation: shine 10s linear infinite;
+}
+
+.reflect:hover {
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 50%;
+    height: 240px;
+  }
+
+  .card {
+    width: 80%;
+  }
+  
+}
+
+@keyframes shine {
+    from {
+        background-position: 200% center;
+    }
+    to {
+        background-position: -200% center;
+    }
+}
+
+a span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #5c7eae);
+  animation: animate1 3s linear infinite;
+}
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #5c7eae);
+  animation: animate2 3s linear infinite;
+  animation-delay: 0.75s;
+}
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+a span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #5c7eae);
+  animation: animate3 3s linear infinite;
+  animation-delay: 1.5s;
+}
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #5c7eae);
+  animation: animate4 3s linear infinite;
+  animation-delay: 2.25s;
+}
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+@keyframes gradient-zoom {
+  0% {
+    background-size: 100% 100%;
+  }
+
+  100% {
+    background-size: 400% 400%;
+  }
+}
+
+.moving-gradient-bg {
+  background: linear-gradient(to bottom right, #03070f, #5c7eae, #5DA3FA,#9495a0, #fff);
+  background-size: 100% 100%;
+  animation: gradient-zoom 3s ease infinite alternate;
+}
+
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
