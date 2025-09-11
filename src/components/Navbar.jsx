@@ -1,8 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
-import Link from "next/link";
-import { CgMenuRightAlt } from "react-icons/cg";
 import StaggeredMenu from "./StaggeredMenu";
+import logo from '../../public/logo-crop.png'
 
 export default function Navbar() {
   const menuItems = [
@@ -30,7 +27,7 @@ const socialItems = [
         openMenuButtonColor="#5c7eae"
         changeMenuColorOnOpen={true}
         colors={['transparent', 'transparent']}
-        logoUrl="/path-to-your-logo.svg"
+        logoUrl={logo}
         accentColor="#5c7eae"
         onMenuOpen={() => console.log('Menu opened')}
         onMenuClose={() => console.log('Menu closed')}
