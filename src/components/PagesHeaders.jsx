@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import ShinyText from "./ShinyText";
 
@@ -49,7 +49,12 @@ const PagesHeaders = ({image, text, description}) => {
   }, []);
 
   return (
-    <div className="relative w-full wrapper ">
+    <motion.div 
+      initial={{ y: 25, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.2, duration: 0.75 }}
+      className="relative w-full wrapper"
+    >
       {/* Hero Section */}
       <section
         className="relative w-full h-screen pages-hero pages-section overflow-hidden z-10"
@@ -79,7 +84,7 @@ const PagesHeaders = ({image, text, description}) => {
           />
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 
