@@ -1,8 +1,12 @@
-import React from 'react'
+import Form from "@/components/Form"
+import PagesHeaders from "@/components/PagesHeaders"
 
 const page = () => {
   return (
-    <div>page</div>
+    <div>
+      <PagesHeaders image='/contact.jpg' text='Contact Us' description='So We Can Help You Collecting What is Yours.' />
+      <Form />
+    </div>
   )
 }
 

@@ -33,8 +33,9 @@ export default function Charts() {
 
       // Animate bars for each chart
       barsRef.current.forEach((bars) => {
-        if (!bars.length) return;
-        const container = bars[0].parentElement;
+        const validBars = bars.filter(Boolean);
+        if (!validBars.length) return;
+        const container = validBars[0].parentElement;
 
         const updateBars = () => {
           const containerHeight = container.clientHeight;
@@ -42,15 +43,15 @@ export default function Charts() {
           const barWidth = 1; 
           const maxBarHeight = containerHeight;
 
-          bars.forEach((bar, i) => {
+          validBars.forEach((bar, i) => {
             bar.style.width = `${barWidth}px`;
           });
 
           gsap.fromTo(
-            bars,
+            validBars,
             { height: 0 },
             {
-              height: (i) => `${((i + 1) / bars.length) * maxBarHeight}px`,
+              height: (i) => `${((i + 1) / validBars.length) * maxBarHeight}px`,
               duration: 0.5,
               ease: "power2.out",
               stagger: 0.05,

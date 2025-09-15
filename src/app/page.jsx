@@ -12,7 +12,7 @@ const page = () => {
       <header className="w-full min-h-screen relative">
         <DarkVeil speed={3} />
 
-        <div className="absolute top-1/2 left-1/2 -translate-1/2 w-full flex flex-col justify-center items-center gap-10">
+        <div className="absolute top-1/2 left-1/2 z-40 -translate-1/2 w-full flex flex-col justify-center items-center gap-10">
           {/* <h1 className="absolute top-1/2 left-1/2 -translate-1/2 w-full text-center text-transparent text-9xl font-bold bg-gradient-to-t from-blue-accent to-gray-400/10 bg-clip-text">Prime Recovery System</h1> */}
           <ShinyText
             text="Prime Recovery System" 

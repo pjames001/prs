@@ -15,7 +15,7 @@ function ParallaxSection() {
   useEffect(() => {
     // Animate background (always active)
     gsap.to(backgroundRef.current, {
-      yPercent: -20,
+      yPercent: -60,
       ease: 'none',
       scrollTrigger: {
         trigger: backgroundRef.current,

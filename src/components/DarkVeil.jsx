@@ -153,14 +153,19 @@ export default function DarkVeil({
 
     return () => {
       running = false;
-      cancelAnimationFrame(animationRef.current);
+
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+
       document.removeEventListener('visibilitychange', handleVisibility);
       ro.disconnect();
-      renderer.gl.getExtension('WEBGL_lose_context')?.loseContext();
       rendererRef.current = null;
       meshRef.current = null;
       programRef.current = null;
     };
+
   }, [speed, resolutionScale]);
 
   // Only update uniforms when props change

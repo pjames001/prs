@@ -1,8 +1,33 @@
+import Mission from "@/components/Mission"
+import PagesHeaders from "@/components/PagesHeaders"
+import YearsOfExperience from "@/components/YearsOfExperience"
 
 
 const page = () => {
   return (
-    <div>page</div>
+    <main>
+      <PagesHeaders image='/about.jpg' text='About' description='The Company That Grant You Back Your Financial Freedom' />
+      <section className="max-w-7xl min-h-screen mx-auto flex md:flex-row flex-col items-center justify-center gap-8 py-10">
+        <div className="flex flex-col items-center gap-2 border border-dark-text py-4 px-8">
+          <h3 className="text-transparent bg-gradient-to-t from-blue-accent to-white/20 bg-clip-text text-3xl/14 font-bold h-max">+300 Agents</h3>
+          <p className="text-center text-dark-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ea minus quia non. Est officiis non distinctio ipsa. Tempore at cumque asperiores itaque, quas ipsam.</p>
+        </div>
+
+        <div className="flex flex-col items-center gap-2 border border-dark-text py-4 px-8">
+          <h3 className="text-transparent bg-gradient-to-t from-blue-accent to-white/20 bg-clip-text text-3xl/14 font-bold h-max">100% Success Rate</h3>
+          <p className="text-center text-dark-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ea minus quia non. Est officiis non distinctio ipsa. Tempore at cumque asperiores itaque, quas ipsam.</p>
+        </div>
+
+        <div className="flex flex-col items-center gap-2 border border-dark-text py-4 px-8">
+          <h3 className="text-transparent bg-gradient-to-t from-blue-accent to-white/20 bg-clip-text text-3xl/14 font-bold h-max">+20 Elite Advisor</h3>
+          <p className="text-center text-dark-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ea minus quia non. Est officiis non distinctio ipsa. Tempore at cumque asperiores itaque, quas ipsam.</p>
+        </div>
+      </section>
+
+      <h1 className="text-center text-gray-200 md:text-6xl text-3xl font-bold">Because We Are Simply The Best ..</h1>  
+      <YearsOfExperience />
+      <Mission />
+    </main>
   )
 }
 

@@ -1,8 +1,13 @@
-import React from 'react'
+import PagesHeaders from '@/components/PagesHeaders'
+import Services from '@/components/Services'
+
 
 const page = () => {
   return (
-    <div>page</div>
+    <main>
+      <PagesHeaders image='/services.jpg' text='Services' description='That Satisfy Your Needs' />
+      <Services />
+    </main>
   )
 }
 
