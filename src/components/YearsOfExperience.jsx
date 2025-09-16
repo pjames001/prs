@@ -63,13 +63,13 @@ const YearsOfExperience = () => {
       <div className="flex-1 space-y-6 text-center md:text-left">
         <h2
           ref={titleRef}
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-dark-text"
+          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-700"
         >
           With Over Than 40 Years of Experience
         </h2>
         <p
           ref={textRef}
-          className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto md:mx-0"
+          className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto md:mx-0"
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur tempora harum sed corporis officia enim! Doloribus facilis saepe laudantium magni libero numquam consequuntur labore sequi nostrum cupiditate reprehenderit, iure explicabo laborum rerum, vero itaque magnam, odit officia architecto voluptate?
         </p>

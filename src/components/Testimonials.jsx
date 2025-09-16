@@ -71,25 +71,25 @@ const Testimonials = () => {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center text-gray-200 leading-tight mb-8">
+        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center text-blue-accent leading-tight mb-8">
           What Our Clients Say
         </h2>
-        <div className="relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl overflow-hidden p-6 sm:p-10">
+        <div className="relative bg-blue-accent rounded-3xl shadow-xl overflow-hidden p-6 sm:p-10">
           {/* Testimonial Content */}
           <div ref={testimonialRef} className={`flex-grow text-center transition-opacity duration-500 ease-in-out ${fading ? 'opacity-0' : 'opacity-100'}`}>
-            <p className="text-lg sm:text-xl lg:text-2xl italic text-dark-text leading-relaxed mb-6">
+            <p className="text-lg sm:text-xl lg:text-2xl italic text-white leading-relaxed mb-6">
               &ldquo;{quote}&rdquo;
             </p>
             <div className="flex flex-col items-center">
               <img
                 src={image}
                 alt={author}
-                className="w-16 h-16 rounded-full object-cover border-4 border-indigo-500 dark:border-indigo-400 mb-4"
+                className="w-16 h-16 rounded-full object-cover border-4 border-indigo-400 mb-4"
               />
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-gray-100">
+              <h4 className="text-xl font-semibold text-gray-100">
                 {author}
               </h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
+              <p className="text-sm text-gray-300">
                 {role}
               </p>
             </div>

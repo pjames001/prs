@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} antialiased bg-dark-blue overflow-x-hidden`}
+        className={`${poppins.className} antialiased bg-white overflow-x-hidden`}
       >
         <Navbar />
         <LenisProvider>

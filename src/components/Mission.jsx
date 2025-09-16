@@ -46,30 +46,30 @@ const Mission = () => {
       {/* Mission */}
       <div
         ref={missionRef}
-        className="flex-1 bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl shadow-lg text-center md:text-left space-y-4"
+        className="flex-1 bg-gray-100 p-8 rounded-2xl shadow-md shadow-black text-center md:text-left space-y-4"
       >
-        <div className="text-4xl text-indigo-500 mx-auto md:mx-0">
+        <div className="text-4xl text-blue-accent mx-auto md:mx-0">
           <FaBullseye />
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h3 className="text-2xl font-bold text-gray-700">
           Our Mission
         </h3>
-        <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">To help businesses recover outstanding debts efficiently and professionally, while maintaining strong relationships with clients and ensuring fair treatment for debtors.
+        <p className="text-gray-600 text-base sm:text-lg leading-relaxed">To help businesses recover outstanding debts efficiently and professionally, while maintaining strong relationships with clients and ensuring fair treatment for debtors.
         </p>
       </div>
 
       {/* Vision */}
       <div
         ref={visionRef}
-        className="flex-1 bg-gray-100 dark:bg-gray-800 p-8 rounded-2xl shadow-lg text-center md:text-left space-y-4"
+        className="flex-1 bg-gray-100 p-8 rounded-2xl shadow-md shadow-black text-center md:text-left space-y-4"
       >
-        <div className="text-4xl text-indigo-500 mx-auto md:mx-0">
+        <div className="text-4xl text-blue-accent mx-auto md:mx-0">
           <FaEye />
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+        <h3 className="text-2xl font-bold text-gray-700">
           Our Vision
         </h3>
-        <p className="text-gray-700 dark:text-gray-300 text-base sm:text-lg leading-relaxed">To be the leading debt recovery agency recognized for integrity, transparency, and results, helping businesses regain financial stability while upholding ethical practices.
+        <p className="text-gray-600 text-base sm:text-lg leading-relaxed">To be the leading debt recovery agency recognized for integrity, transparency, and results, helping businesses regain financial stability while upholding ethical practices.
         </p>
       </div>
     </section>

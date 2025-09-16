@@ -15,28 +15,24 @@ const Services = () => {
       description:
         "Efficient and professional recovery of outstanding debts while maintaining client relationships.",
       image: service1Img,
-      link: '/commercial-collections',
     },
     {
       title: "Consumer Collections",
       description:
         "Assessing client creditworthiness to minimize financial risk and optimize collections.",
       image: service2Img,
-      link: '/consumer-collections',
     },
     {
       title: "Legal Collections",
       description:
         "Providing tailored financial solutions to help businesses regain stability.",
       image: service3Img,
-      link: '/legal-collections',
     },
     {
       title: "Medical Collections",
       description:
         "Providing tailored financial solutions to help businesses regain stability.",
       image: service3Img,
-      link: '/medical-collections',
     },
   ];
 
@@ -72,10 +68,9 @@ const Services = () => {
       className="relative w-full mx-auto px-4 mt-40 sm:px-6 lg:px-12 py-16 space-y-4"
     >
       {services.map((service, i) => (
-        <Link
+        <div
           key={i}
-          href={service.link}
-          className={`relative block w-full overflow-hidden cursor-pointer transition-all duration-600 border-b border-gray-600`}
+          className={`relative block w-full overflow-hidden transition-all duration-600 border-b border-gray-600`}
           style={{
             height: hoveredIndex === i ? "300px" : "80px",
           }}
@@ -88,14 +83,14 @@ const Services = () => {
                 src={service.image}
                 alt={service.title}
                 fill
-                className="object-cover rounded-md"
+                className="object-cover rounded-md brightness-50"
               />
             )}
           </div>
 
           <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-12">
             <h3
-              className={`text-xl md:text-2xl font-bold text-white ${
+              className={`text-xl md:text-2xl font-bold text-blue-accent ${
                 hoveredIndex === i ? "text-shadow-lg" : ""
               }`}
             >
@@ -107,7 +102,7 @@ const Services = () => {
               </p>
             )}
           </div>
-        </Link>
+        </div>
       ))}
     </section>
   )

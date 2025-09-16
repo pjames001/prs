@@ -1,91 +1,108 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { motion } from "framer-motion";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
-import ShinyText from "./ShinyText";
 
-const PagesHeaders = ({image, text, description}) => {
-  const backgroundImageUrl = image
-  const zoomingImageUrl =
-    "/pages.png";
+
+// Register GSAP plugins
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const PagesHeaders = ({ image, text, description }) => {
+  const containerRef = useRef(null);
+  const foregroundImgRef = useRef(null);
+  const backgroundDivRef = useRef(null);
+  const textRef = useRef(null);
 
   useEffect(() => {
+    // Select all the elements and a dummy element for the scroll
+    const foregroundImg = foregroundImgRef.current;
+    const backgroundDiv = backgroundDivRef.current;
+    const text = textRef.current;
 
-    const timeline = gsap.timeline({
+    // Use a timeline to orchestrate the animations
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".wrapper",
-        start: "top top",
-        end: "+=150%",
-        pin: true,
-        scrub: true,
-        markers: false,
+        trigger: containerRef.current,
+        start: "top top", // When the top of the container hits the top of the viewport
+        end: "bottom+=1000px top", // Increase the scroll distance
+        scrub: 1, // Smoothly link animation to scroll
+        pin: true, // Pin the container while scrolling
+        // markers: true, // Uncomment for debugging
       },
     });
 
-    timeline
-      .to(".pages-header-image", {
-        scale: 40,
-        z: 350,
-        transformOrigin: "center center",
-        ease: "power1.inOut",
-      })
-      .to(
-        ".pages-section.pages-hero",
-        {
-          scale: 1.1,
-          transformOrigin: "center center",
-          ease: "power1.inOut",
-        },
-        "<"
-      );
+    // Animate the foreground image: scale up
+    tl.to(
+      foregroundImg,
+      {
+        scale: 45, // Zoom in effect
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      "start"
+    );
+    
+    // Animate the text: fade in and scale up
+    tl.fromTo(
+      text,
+      {
+        opacity: 0,
+        scale: 0.8,
+      },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      },
+      "<0.2" // Start this animation a bit before the previous one ends
+    );
 
-    // Cleanup function to prevent memory leaks by killing the timeline and trigger
+    // Clean up function
     return () => {
-      if (timeline) {
-        timeline.kill();
-      }
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 
   return (
-    <motion.div 
-      initial={{ y: 25, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.2, duration: 0.75 }}
-      className="relative w-full wrapper"
-    >
-      {/* Hero Section */}
-      <section
-        className="relative w-full h-screen pages-hero pages-section overflow-hidden z-10"
-        style={{
-          backgroundImage: `linear-gradient(rgba(3, 7, 15, 0.6), rgba(3, 7, 15, 0.6)), url('${backgroundImageUrl}')`,
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        <h2 className="text-white md:text-2xl text-md absolute bottom-1/4 md:left-[35%] left-8">
-        {description}
-        </h2>
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      {/* Container for the pinned animation */}
+      <div ref={containerRef} className="relative w-screen h-screen overflow-hidden">
+        {/* Background image and text */}
+        <div 
+          ref={backgroundDivRef} 
+          className="absolute inset-0 z-0 flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-500"
+          style={{ backgroundImage: `url('${image}')` }}
+        >
+          <div ref={textRef} className="text-white  text-center p-4 bg-black/30 bg-opacity-50 backdrop-blur-sm rounded-lg">
+            <h1 
+             className="text-5xl md:text-7xl font-bold"
+            >
+            {text}
+          </h1>
+          <p className="text-white text-center md:text-5xl text-3xl mt-10">{description}</p>
+          </div>
+        </div>
 
-        {/* Foreground image + shiny text */}
-        <div className="absolute inset-0 z-20">
+        {/* Foreground image */}
+        <div className="absolute inset-0 flex items-center justify-center z-10">
           <Image
-            src={zoomingImageUrl}
-            alt="foreground image"
+            ref={foregroundImgRef} 
+            src="/pages.png"
+            alt="Foreground" 
             fill
-            priority
-            className="pages-header-image object-cover md:object-top-right object-[50%_-20px]"
-          />
-          <ShinyText
-            text={text}
-            className="absolute bottom-1/2 md:left-[25%] left-20 translate-y-1/2 md:text-9xl text-7xl text-dark-text/60 font-extrabold"
+            className="w-full h-full object-cover md:object-top-right object-[50%_15px]"
           />
         </div>
-      </section>
-    </motion.div>
+      </div>
+
+      {/* Placeholder content to enable scrolling */}
+      <div className="w-full md:h-[200vh] h-[250vh] flex items-center justify-center bg-white"></div>
+    </div>
   );
-};
+}
 
 export default PagesHeaders;

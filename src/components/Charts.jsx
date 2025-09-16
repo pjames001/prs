@@ -40,7 +40,7 @@ export default function Charts() {
         const updateBars = () => {
           const containerHeight = container.clientHeight;
           const containerWidth = container.clientWidth;
-          const barWidth = 1; 
+          const barWidth = 2; 
           const maxBarHeight = containerHeight;
 
           validBars.forEach((bar, i) => {
@@ -77,61 +77,61 @@ export default function Charts() {
   return (
     <section
       ref={sectionRef}
-      className="w-full bg-dark-blue text-white py-16 px-4 md:px-12"
+      className="w-full bg-white text-white py-16 px-4 md:px-12"
     >
-      <h1 className="text-4xl text-gray-300 text-center font-light my-10">Our Impact In Numbers</h1>
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <h1 className="md:text-7xl text-4xl text-blue-accent text-center font-bold my-10">Our Impact In Numbers</h1>
+      <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-blue-accent/70 to-transparent"></div>
+      <div className="max-w-7xl mx-auto grid grid-cols-1 xl:grid-cols-2 gap-8">
         {/* debts collected */}
-        <div className="bg-[#0a0a0a] p-6 relative">
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[120%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-          <h3 className="text-xl text-gray-300 font-semibold">Debts Collected Till This Day</h3>
+        <div className="bg-transparent p-6 relative">
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[120%] w-[2px] bg-gradient-to-b from-transparent via-blue-accent to-transparent"></div>
+          <h3 className="text-xl text-gray-700 font-semibold">Debts Collected Till This Day</h3>
           <p
             ref={(el) => (numbersRef.current[0] = el)}
             data-target="20000000"
             className="text-3xl md:text-4xl font-light text-[#4d7dfc]"
           >
           </p>
-          <div className="flex items-end md:gap-5 gap-[11px] md:absolute bottom-6 h-40 w-full">
-            {Array.from({ length: 25 }).map((_, i) => (
+          <div className="flex items-end md:gap-5 gap-[10px] md:absolute bottom-6 h-40 w-full">
+            {Array.from({ length: 26 }).map((_, i) => (
               <div
                 key={i}
                 ref={(el) => (barsRef.current[0][i] = el)}
-                className="flex-shrink-0 bg-gradient-to-t from-transparent to-white/70 rounded"
+                className="flex-shrink-0 bg-gradient-to-t from-transparent to-blue-accent rounded"
               ></div>
             ))}
           </div>
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] w-[2px] bg-gradient-to-b from-transparent via-blue-accent to-transparent"></div>
         </div>
 
         <div className="grid gap-8 md:grid-cols-1">
           {/* agents */}
-          <div className="bg-[#0a0a0a] p-6 relative">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[120%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <h3 className="text-xl text-gray-300 font-semibold">Agents</h3>
+          <div className="bg-transparent p-6 relative">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[120%] w-[2px] bg-gradient-to-b from-transparent via-blue-accent to-transparent"></div>
+            <h3 className="text-xl text-gray-700 font-semibold">Agents</h3>
             <p
               ref={(el) => (numbersRef.current[1] = el)}
               data-target="300"
               className="text-3xl md:text-4xl font-light text-[#4d7dfc]"
             >
             </p>
-            <div className="flex items-end md:gap-5 gap-[11px] mt-6 h-32 w-full">
-              {Array.from({ length: 25 }).map((_, i) => (
+            <div className="flex items-end md:gap-5 gap-[10px] mt-6 h-32 w-full">
+              {Array.from({ length: 26 }).map((_, i) => (
                 <div
                   key={i}
                   ref={(el) => (barsRef.current[1][i] = el)}
-                  className="flex-shrink-0 bg-gradient-to-t from-transparent to-white/70 rounded"
+                  className="flex-shrink-0 bg-gradient-to-t from-transparent to-blue-accent rounded"
                 ></div>
               ))}
             </div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <div className="absolute right-1/2 bottom-0 translate-x-1/2 w-[120%] h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] w-[2px] bg-gradient-to-b from-transparent via-blue-accent to-transparent"></div>
+            <div className="absolute right-1/2 bottom-0 translate-x-1/2 w-[120%] h-[2px] bg-gradient-to-r from-transparent via-blue-accent to-transparent"></div>
           </div>
 
           {/* companies helped */}
-          <div className="bg-[#0a0a0a] p-6 relative">
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[120%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <h3 className="text-xl text-gray-300 font-semibold">Companies Helped</h3>
+          <div className="bg-transparent p-6 relative">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[120%] w-[2px] bg-gradient-to-b from-transparent via-blue-accent to-transparent"></div>
+            <h3 className="text-xl text-gray-700 font-semibold">Companies Helped</h3>
             <p
               ref={(el) => (numbersRef.current[2] = el)}
               data-target="5000"
@@ -139,21 +139,21 @@ export default function Charts() {
             >
               +256%
             </p>
-            <div className="flex items-end md:gap-5 gap-[11px] mt-6 h-32 w-full">
-              {Array.from({ length: 25 }).map((_, i) => (
+            <div className="flex items-end md:gap-5 gap-[10px] mt-6 h-32 w-full">
+              {Array.from({ length: 26 }).map((_, i) => (
                 <div
                   key={i}
                   ref={(el) => (barsRef.current[2][i] = el)}
-                  className="flex-shrink-0 bg-gradient-to-t from-transparent to-white/70 rounded"
+                  className="flex-shrink-0 bg-gradient-to-t from-transparent to-blue-accent rounded"
                 ></div>
               ))}
             </div>
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] w-[1px] bg-gradient-to-b from-transparent via-white/40 to-transparent"></div>
-            <div className="absolute right-1/2 top-0 translate-x-1/2 w-[120%] h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[120%] w-[2px] bg-gradient-to-b from-transparent via-blue-accent to-transparent"></div>
+            <div className="absolute right-1/2 top-0 translate-x-1/2 w-[120%] h-[2px] bg-gradient-to-r from-transparent via-blue-accent to-transparent"></div>
           </div>
         </div>
       </div>
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+      <div className="w-full h-[2px] bg-gradient-to-r from-transparent via-blue-accent to-transparent"></div>
     </section>
   );
 }
