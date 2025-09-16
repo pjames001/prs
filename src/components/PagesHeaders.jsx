@@ -92,7 +92,8 @@ const PagesHeaders = ({ image, text, description }) => {
           <Image
             ref={foregroundImgRef} 
             src="/pages.png"
-            alt="Foreground" 
+            alt="Foreground"
+            sizes="100vw"
             fill
             className="w-full h-full object-cover md:object-top-right object-[50%_15px]"
           />

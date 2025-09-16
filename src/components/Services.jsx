@@ -5,7 +5,7 @@ import Image from "next/image";
 import service1Img from "../../public/img1.jpg";
 import service2Img from "../../public/img2.jpg";
 import service3Img from "../../public/img3.jpg";
-import Link from "next/link";
+import service4Img from "../../public/img4.jpg";
 
 const Services = () => {
 
@@ -32,7 +32,7 @@ const Services = () => {
       title: "Medical Collections",
       description:
         "Providing tailored financial solutions to help businesses regain stability.",
-      image: service3Img,
+      image: service4Img,
     },
   ];
 

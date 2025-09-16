@@ -2,6 +2,20 @@ import Mission from "@/components/Mission"
 import PagesHeaders from "@/components/PagesHeaders"
 import YearsOfExperience from "@/components/YearsOfExperience"
 
+export const metadata = {
+  title: 'MJ Maguire And Associates | About Us',
+  description: 'Learn more about our company and mission',
+  keywords: ['debt collection agency', 'company that collect debts', 'commercial collection', 'consumer collection', 'individual collection', 'legal collection', 'medical collection'],
+  openGraph: {
+    title: 'MJ Maguire And Associates | About Us',
+    description: 'Learn more about our company and mission',
+    url: 'https://mj.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 const page = () => {
   return (
