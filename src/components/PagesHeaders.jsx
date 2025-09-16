@@ -72,19 +72,24 @@ const PagesHeaders = ({ image, text, description }) => {
       {/* Container for the pinned animation */}
       <div ref={containerRef} className="relative w-screen h-screen overflow-hidden">
         {/* Background image and text */}
-        <div 
-          ref={backgroundDivRef} 
-          className="absolute inset-0 z-0 flex flex-col items-center justify-center bg-cover bg-center transition-opacity duration-500"
-          style={{ backgroundImage: `url('${image}')` }}
-        >
-          <div ref={textRef} className="text-white  text-center p-4 bg-black/30 bg-opacity-50 backdrop-blur-sm rounded-lg">
-            <h1 
-             className="text-5xl md:text-7xl font-bold"
-            >
-            {text}
-          </h1>
-          <p className="text-white text-center md:text-5xl text-3xl mt-10">{description}</p>
-          </div>
+       
+        <div ref={backgroundDivRef} className="absolute inset-0 z-0">
+          <Image
+            src={image}
+            alt="Background"
+            fill
+            sizes="100vw"
+            className="object-cover transition-opacity duration-500"
+            priority // Make sure this is also prioritized for LCP
+          />
+        </div>
+
+        {/* Text over images */}
+        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center">
+            <div ref={textRef} className="text-white text-center p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+                <h1 className="text-5xl md:text-7xl font-bold">{text}</h1>
+                <p className="text-white text-center md:text-5xl text-3xl mt-10">{description}</p>
+            </div>
         </div>
 
         {/* Foreground image */}
