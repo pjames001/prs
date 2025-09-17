@@ -19,7 +19,7 @@ export const metadata = {
 const page = () => {
   return (
     <main>
-      <PagesHeaders image='/services.jpg' text='Services' description='That Satisfy Your Needs, Provided By Us' />
+      <PagesHeaders image='/services.jpg' text='Services' description='That Satisfy Your Needs, Provided By The Best In Market' />
       <Services />
     </main>
   )

@@ -86,7 +86,7 @@ const PagesHeaders = ({ image, text, description }) => {
 
         {/* Text over images */}
 
-          <div className="absolute z-20 top-1/2 lg:left-1/4 left-0 -translate-y-1/2 lg:w-7xl p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+          <div className="absolute z-20 top-1/2 lg:left-1/4 left-0 -translate-y-1/2 lg:min-w-5xl p-4 bg-black/30 backdrop-blur-sm rounded-lg">
             <h1 className="text-5xl md:text-7xl text-white font-bold lg:text-left text-center">{text}</h1>
             <div ref={textRef} className="text-white text-center">
               <p className="text-white text-center md:text-3xl text-xl mt-10 ">{description}</p>
