@@ -65,9 +65,9 @@ const Testimonials = () => {
   const { quote, author, role, image } = testimonials[activeIndex];
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4">
+    <div className="flex items-center justify-center p-4">
       <div
-        className="w-full max-w-4xl px-4 py-12 md:py-20"
+        className="w-full max-w-5xl px-4 py-12 md:py-10"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >

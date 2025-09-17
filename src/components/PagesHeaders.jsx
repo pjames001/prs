@@ -85,12 +85,14 @@ const PagesHeaders = ({ image, text, description }) => {
         </div>
 
         {/* Text over images */}
-        <div className="absolute inset-0 z-20 flex flex-col items-center justify-center">
-            <div ref={textRef} className="text-white text-center p-4 bg-black/30 backdrop-blur-sm rounded-lg">
-                <h1 className="text-5xl md:text-7xl font-bold">{text}</h1>
-                <p className="text-white text-center md:text-5xl text-3xl mt-10">{description}</p>
+
+          <div className="absolute z-20 top-1/2 lg:left-1/4 left-0 -translate-y-1/2 lg:w-7xl p-4 bg-black/30 backdrop-blur-sm rounded-lg">
+            <h1 className="text-5xl md:text-7xl text-white font-bold lg:text-left text-center">{text}</h1>
+            <div ref={textRef} className="text-white text-center">
+              <p className="text-white text-center md:text-3xl text-xl mt-10 ">{description}</p>
             </div>
-        </div>
+          </div>
+
 
         {/* Foreground image */}
         <div className="absolute inset-0 flex items-center justify-center z-10">

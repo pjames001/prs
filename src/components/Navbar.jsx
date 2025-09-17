@@ -23,7 +23,7 @@ const socialItems = [
       <div className="bg-white fixed top-0 left-0 z-[9999] w-full shadow-md shadow-black">
         <nav className="md:flex hidden justify-between items-center h-[80px] max-w-7xl mx-auto">
           <Link href='/'>
-            <Image src={logo} width={150} alt="logo" />
+            <Image src={logo} width={220} alt="logo" />
           </Link>
           
           <ul className="h-full flex items-stretch gap-4 text-gray-800 text-lg">

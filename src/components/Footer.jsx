@@ -33,16 +33,13 @@ const Footer = () => {
             <li className='text-[#fff] text-2xl font-light mb-8 hover:text-white transition duration-300 ease'>
               <Link href='/services'>Legal Collection</Link>
             </li>
-            <li className='text-[#fff] text-2xl font-light mb-8 hover:text-white transition duration-300 ease'>
-              <Link href='/services'>Medical Collection</Link>
-            </li>
           </ul>
         </div>
       </div>
 
       <div className='flex lg:flex-row flex-col justify-between items-center text-dark-text'>
         <Image src={logo} alt='logo' width={200} className='invert' />
-        <p className='my-4 text-center'>&copy;{new Date().getFullYear()} Prime Recovery System. All Rights Reserved.</p>
+        <p className='my-4 text-center'>&copy;{new Date().getFullYear()} MJ Maguire And Associates. All Rights Reserved.</p>
 
       </div>
     </footer>

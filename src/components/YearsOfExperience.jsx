@@ -2,9 +2,10 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from "gsap";
 import Image from "next/image";
-import img from '../../public/img5.jpg'
+import Button from './Button';
 
-const YearsOfExperience = () => {
+
+const YearsOfExperience = ({title, text1, text2, text3, image}) => {
 
   const sectionRef = useRef(null);
   const titleRef = useRef(null);
@@ -65,14 +66,23 @@ const YearsOfExperience = () => {
           ref={titleRef}
           className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-700"
         >
-          With Over Than 40 Years of Experience
+          {title}
         </h2>
-        <p
-          ref={textRef}
-          className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto md:mx-0"
-        >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel aspernatur tempora harum sed corporis officia enim! Doloribus facilis saepe laudantium magni libero numquam consequuntur labore sequi nostrum cupiditate reprehenderit, iure explicabo laborum rerum, vero itaque magnam, odit officia architecto voluptate?
-        </p>
+        <div ref={textRef}>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl my-4 mx-auto md:mx-0">
+            {text1}
+          </p>
+
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl my-4 mx-auto md:mx-0">
+            {text2}
+          </p>
+
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl my-4 mx-auto md:mx-0">
+            {text3}
+          </p>
+        </div>
+        
+        <Button link='/contact' text='Learn More' />
       </div>
 
       {/* Image Section */}
@@ -81,7 +91,7 @@ const YearsOfExperience = () => {
         className="lg:flex-1 relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[28rem]"
       >
         <Image
-          src={img}
+          src={image}
           alt="Animated visual"
           fill
           className="rounded-2xl object-cover shadow-xl"

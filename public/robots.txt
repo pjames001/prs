@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: mjmaguireandassociates.com
+
+# Sitemaps
+Sitemap: mjmaguireandassociates.com/sitemap.xml

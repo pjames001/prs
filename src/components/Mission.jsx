@@ -48,7 +48,7 @@ const Mission = () => {
         ref={missionRef}
         className="flex-1 bg-gray-100 p-8 rounded-2xl shadow-md shadow-black text-center md:text-left space-y-4"
       >
-        <div className="text-4xl text-blue-accent mx-auto md:mx-0">
+        <div className="text-4xl text-blue-accent md:block flex justify-center">
           <FaBullseye />
         </div>
         <h3 className="text-2xl font-bold text-gray-700">
@@ -63,7 +63,7 @@ const Mission = () => {
         ref={visionRef}
         className="flex-1 bg-gray-100 p-8 rounded-2xl shadow-md shadow-black text-center md:text-left space-y-4"
       >
-        <div className="text-4xl text-blue-accent mx-auto md:mx-0">
+        <div className="text-4xl text-blue-accent md:block flex justify-center">
           <FaEye />
         </div>
         <h3 className="text-2xl font-bold text-gray-700">

@@ -1,8 +1,10 @@
 "use client";
 import gsap from "gsap";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdOutlineEmail } from "react-icons/md";
 import { MdOutlinePhoneIphone } from "react-icons/md";
+import img from '../../public/img8.jpg'
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -186,11 +188,11 @@ const Form = () => {
       <div className="relative z-10 flex flex-col lg:flex-row items-start h-full lg:min-h-screen mt-10">
         {/* Left Side: Contact Info & Gradient */}
         <div className="w-full lg:w-1/2 p-12 lg:p-20 flex flex-col justify-center items-start">
-          <div className="stagger-in text-6xl font-extrabold text-gray-700 leading-tight">
+          <div className="stagger-in md:text-6xl text-5xl font-extrabold text-gray-700 leading-tight">
             Let's build something <br /> amazing together.
           </div>
           <p className="stagger-in mt-6 text-xl text-gray-600">
-            Reach out to discuss your project, ask a question, or just say
+            Reach out to discuss your needs, ask a question, or just say
             hello.
           </p>
 
@@ -210,6 +212,8 @@ const Form = () => {
               <span className="text-blue-accent">+1 (555) 123-4567</span>
             </div>
           </div>
+
+          <Image src={img} alt="contact image" width={1000} className="mt-10 rounded-lg" />
         </div>
 
         {/* Right Side: Contact Form */}
@@ -218,7 +222,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="companyName"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Company Name
               </label>
@@ -235,7 +239,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="fullName"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Full Name
               </label>
@@ -252,7 +256,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="position"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Position
               </label>
@@ -264,9 +268,7 @@ const Form = () => {
                 required
                 className="mt-1 block w-full px-4 py-3 bg-transparent border-b border-gray-500 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-accent transition-all duration-300 ease"
               >
-                <option value="" disabled>
-                  Select Your Position
-                </option>
+                <option value="" disabled></option>
                 <option value="owner">Owner/CEO</option>
                 <option value="manager">Manager</option>
                 <option value="director">Director</option>
@@ -278,7 +280,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="business"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Type Of Business
               </label>
@@ -295,7 +297,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="state"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 State
               </label>
@@ -307,9 +309,7 @@ const Form = () => {
                 required
                 className="mt-1 block w-full px-4 py-3 bg-transparent border-b border-gray-500 text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-accent transition-all duration-300 ease"
               >
-                <option value="" disabled>
-                  Select Your State
-                </option>
+                <option value="" disabled></option>
                 {states.map((state, index) => (
                   <option key={index} value={state}>
                     {state}
@@ -320,7 +320,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="phone"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Phone Number
               </label>
@@ -337,7 +337,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Email
               </label>
@@ -354,7 +354,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="subject"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Subject
               </label>
@@ -371,7 +371,7 @@ const Form = () => {
             <div className="stagger-in">
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-600"
+                className="block text-lg font-medium text-gray-600"
               >
                 Message
               </label>
