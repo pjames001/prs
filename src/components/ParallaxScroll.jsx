@@ -56,7 +56,7 @@ function ParallaxSection() {
             <div className='flex flex-col justify-center gap-4'>
               <IoBusinessOutline size={25} className='text-white' />
               <h3 className='text-2xl text-white'>Commercial Collection</h3>
-              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+              <p className='text-dark-text'>To maximize results and minimize business disruptions, MJ Maguire And Associates works closely with each client to create a customized debt collection strategy. Our team has a deep understanding of the commercial debt collection process, allowing us to expertly handle various industries and debt types—from overdue payments to outstanding balances. We can guide you from initial negotiations to legal action, if needed, by a contracted attorney.</p>
             </div>
           </div>
 
@@ -66,7 +66,7 @@ function ParallaxSection() {
             <div className='flex flex-col justify-center gap-4'>
               <FaPeopleArrows size={25} className='text-white' />
               <h3 className='text-2xl text-white'>Consumer Collection</h3>
-              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+              <p className='text-dark-text'>At MJ Maguire And Associates, we have a long, successful history as a retail collection agency across all industries, and we take pride in our reputation for excellent customer service.We ensure full compliance with the Federal Fair Debt Collection Practices Act (FDCPA), the Fair Credit Reporting Act (FCRA), and all state and local regulations. Our highly trained and licensed professionals receive continuous training to strictly adhere to these laws. We also work with retail accounts as often as legally allowed and report collection items to all major credit bureaus.</p>
             </div>
           </div>
 
@@ -76,7 +76,7 @@ function ParallaxSection() {
             <div className='flex flex-col justify-center gap-4'>
               <GoLaw size={25} className='text-white' />
               <h3 className='text-2xl text-white'>Legal Collection</h3>
-              <p className='text-dark-text'>Lorem ipsum dolor sit amet consectetur, adipisicing elit...</p>
+              <p className='text-dark-text'>MJ Maguire And Associates is not a law firm but works with contracted attorneys who can pursue your legal collections to the full extent of the law. Once we approve your case, you'll receive a Creditor's Declaration or Substitution of Attorney form to begin the process. If you want a full-service option for your legal collections, our professionals are ready to help.We have extensive experience with both commercial and retail collections. Whether you're a law firm, a large corporation with a full collection portfolio, or an individual with a single account, we have the knowledge and resources to assist you.</p>
             </div>
           </div>
         </div>

@@ -50,13 +50,13 @@ const PagesHeaders = ({ image, text, description }) => {
       text,
       {
         opacity: 0,
-        scale: 0.8,
+        scale: 0,
       },
       {
         opacity: 1,
         scale: 1,
         duration: 0.5,
-        ease: "back.out(1.7)",
+        ease: "power2.inOut",
       },
       "<0.2" // Start this animation a bit before the previous one ends
     );
@@ -79,17 +79,17 @@ const PagesHeaders = ({ image, text, description }) => {
             alt="Background"
             fill
             sizes="100vw"
-            className="object-cover transition-opacity duration-500"
+            className="object-cover transition-opacity duration-500 brightness-80"
             priority // Make sure this is also prioritized for LCP
           />
         </div>
 
         {/* Text over images */}
 
-          <div className="absolute z-20 top-1/2 lg:left-1/4 left-0 -translate-y-1/2 lg:min-w-5xl p-4 bg-black/30 backdrop-blur-sm rounded-lg">
-            <h1 className="text-5xl md:text-7xl text-white font-bold lg:text-left text-center">{text}</h1>
+          <div className="absolute z-20 top-1/2 left-1/2 -translate-1/2 w-max">
+            <h1 className="text-5xl md:text-8xl text-white font-bold text-center">{text}</h1>
             <div ref={textRef} className="text-white text-center">
-              <p className="text-white text-center md:text-3xl text-xl mt-10 ">{description}</p>
+              {description != '' && <p className="text-white text-center md:text-3xl text-xl mt-10 lg:max-w-4xl md:max-w-2xl max-w-xs p-4 bg-black/30 backdrop-blur-sm rounded-lg">{description}</p>}
             </div>
           </div>
 

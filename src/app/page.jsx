@@ -24,7 +24,7 @@ export const metadata = {
 const page = () => {
   return (
     <>
-      <PagesHeaders image='/header.jpg' text='MJ Maguire And Associates' />
+      <PagesHeaders image='/header.jpg' text='MJ Maguire And Associates' description='' />
       <main className="min-h-screen w-full overflow-x-hidden">
         {/* <Charts /> */}
         <YearsOfExperience 

@@ -191,7 +191,7 @@ const Form = () => {
           <div className="stagger-in md:text-6xl text-5xl font-extrabold text-gray-700 leading-tight">
             Let's build something <br /> amazing together.
           </div>
-          <p className="stagger-in mt-6 text-xl text-gray-600">
+          <p className="stagger-in mt-6 text-2xl text-gray-600">
             Reach out to discuss your needs, ask a question, or just say
             hello.
           </p>
@@ -201,15 +201,15 @@ const Form = () => {
               <span className="text-blue-accent">
                 <MdOutlineEmail size={20} />
               </span>
-              <a href="mailto:contact@example.com" className="text-blue-accent">
-                contact@example.com
+              <a href="mailto:contact@example.com" className="text-blue-accent text-lg">
+                info@mj-maguire.com
               </a>
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-blue-accent">
                 <MdOutlinePhoneIphone size={20} />
               </span>
-              <span className="text-blue-accent">+1 (555) 123-4567</span>
+              <span className="text-blue-accent text-lg">+1 (877) 785-8552</span>
             </div>
           </div>
 

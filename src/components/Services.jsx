@@ -58,7 +58,7 @@ const Services = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full mx-auto px-4 mt-40 sm:px-6 lg:px-12 py-16 space-y-4"
+      className="relative w-full mx-auto px-4 mt-16 sm:px-6 lg:px-12 py-16 space-y-4"
     >
       {services.map((service, i) => (
         <div
@@ -84,7 +84,7 @@ const Services = () => {
 
           <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-12">
             <h3
-              className={`text-xl md:text-2xl font-bold text-blue-accent ${
+              className={`text-xl md:text-5xl font-bold text-blue-accent ${
                 hoveredIndex === i ? "text-shadow-lg" : ""
               }`}
             >
